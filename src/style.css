@@ -76,3 +76,10 @@ div.day {
 .form-control {
   padding: 0;
 }
+.git {
+  display: block;
+  text-align: center;
+  padding: 5px;
+  color: white;
+  font-size: 15px;
+}
