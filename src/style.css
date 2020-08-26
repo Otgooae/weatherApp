@@ -1,60 +1,69 @@
 h1 {
-  font-size: 50px;
-  font-family: "Coiny", cursive;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: "Alice", serif;
   margin-bottom: 0px;
   text-align: center;
+  color: #ff76c0;
 }
 h2 {
-  font-size: 20px;
+  font-size: 30px;
+  font-family: "Amatic SC", cursive;
   margin-bottom: 10px;
   text-align: center;
+  color: #a68d65;
 }
 h3 {
   text-align: center;
-  font-size: 20px;
-}
-body {
-  font-family: monospace;
-  color: #f6efa6;
+  font-size: 23px;
+  font-family: "Amatic SC", cursive;
+  color: #a68d65;
 }
 li {
   list-style-type: none;
 }
 ul {
-  padding-left: 10px;
-  font-size: 10px;
-  margin: 32px 10px;
+  font-size: 13px;
+  font-family: "Alice", serif;
+  margin: 32px 1px;
+  color: #2f4858;
 }
 img {
   display: block;
   margin: 0 auto;
 }
-.weather {
-  background: linear-gradient(to top, #a7a6cb 0%, #8989ba 52%, #8989ba 100%);
-  padding: 20px;
-  border: 1px solid #f0ece3;
-  border-radius: 15px;
-  margin: 50px auto;
+.weather-app-wrapper {
+  margin: 20px auto;
+  max-width: 500px;
 }
-.container {
-  max-width: 450px;
+.weather {
+  background: #ffd576;
+  padding: 15px;
+  border: 1px solid #b5aa99;
+  border-radius: 10px;
+  text-align: center;
 }
 .status {
-  font-size: 15px;
+  font-size: 18px;
+  font-family: "Alice", serif;
   display: block;
   text-align: center;
   opacity: 70%;
   line-height: 5px;
+  color: #4f4537;
 }
 .current {
-  font-size: 65px;
-  padding-left: 50px;
+  font-size: 85px;
+  font-family: "Alice", serif;
+  padding-left: 40px;
+  color: #2f4858;
 }
 .tempUnit {
   position: relative;
-  font-size: 13px;
-  top: -32px;
+  font-size: 18px;
+  top: -42px;
   left: 5px;
+  color: #2f4858;
 }
 div.col {
   padding: 0;
@@ -62,24 +71,62 @@ div.col {
 }
 div.row {
   display: inline-flex;
-  margin: 0 auto;
-  font-size: 10px;
-  color: #f6efa6;
+  margin: 5px auto;
+  font-size: 15px;
+  font-family: "Alice", serif;
+  font-weight: bold;
+  color: #2f4858;
+}
+div.row.temp {
+  position: relative;
+  left: 20px;
 }
 div.day {
   position: relative;
-  left: 10px;
+  left: 30px;
+  top: -50px;
 }
 .form-row {
-  margin: 20px 10px;
-}
-.form-control {
+  margin: 0 auto;
+  font-family: "Amatic SC", cursive;
+  width: 90%;
   padding: 0;
 }
-.git {
-  display: block;
+#citySearch {
+  background-color: #fff8e8;
+  font-family: "Amatic SC", cursive;
+  font-size: 25px;
+  height: 41px;
+  margin-top: 2px;
+  padding: 1px 60px;
+  border-radius: 10px;
   text-align: center;
-  padding: 5px;
-  color: white;
+}
+.searchButton {
+  background-color: #ff76c0;
+  display: block;
+  font-family: "Amatic SC", cursive;
+  font-size: 25px;
+  height: 41px;
+  margin-top: 2px;
+  padding: 1px 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+#showCurrent {
+  background-color: #00d3ff;
+  display: block;
+  font-family: "Amatic SC", cursive;
+  height: 41px;
+  margin-top: 2px;
+  margin-left: 4px;
+  padding: 1px 10px;
+  border-radius: 10px;
+}
+.gitLink {
+  display: block;
   font-size: 15px;
+  font-family: "Amatic SC", cursive;
+  padding: 3px;
+  text-align: center;
 }
