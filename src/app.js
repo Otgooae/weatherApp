@@ -57,7 +57,7 @@ function showCityTemp(response) {
     response.data.wind.speed
   );
   document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
 }
 function search(city) {
   let apiKey = `c518c03770222f903df8ad86b5e217d8`;

@@ -4,20 +4,20 @@ h1 {
   font-family: "Alice", serif;
   margin-bottom: 0px;
   text-align: center;
-  color: #ff76c0;
+  color: #ff54a5;
 }
 h2 {
   font-size: 30px;
   font-family: "Amatic SC", cursive;
   margin-bottom: 10px;
   text-align: center;
-  color: #a68d65;
+  color: #474554;
 }
 h3 {
   text-align: center;
   font-size: 23px;
   font-family: "Amatic SC", cursive;
-  color: #a68d65;
+  color: #474554;
 }
 li {
   list-style-type: none;
@@ -25,10 +25,11 @@ li {
 ul {
   font-size: 13px;
   font-family: "Alice", serif;
-  margin: 32px 1px;
-  color: #2f4858;
+  margin: 60px 1px;
+  color: #8984ef;
+  text-align: left;
 }
-img {
+img.main {
   display: block;
   margin: 0 auto;
 }
@@ -37,9 +38,9 @@ img {
   max-width: 500px;
 }
 .weather {
-  background: #ffd576;
+  background: #f2ecff;
   padding: 15px;
-  border: 1px solid #b5aa99;
+  border: 1px solid #4d4d4d;
   border-radius: 10px;
   text-align: center;
 }
@@ -48,22 +49,26 @@ img {
   font-family: "Alice", serif;
   display: block;
   text-align: center;
+  text-transform: capitalize;
   opacity: 70%;
-  line-height: 5px;
-  color: #4f4537;
+  line-height: 1px;
+  color: #474554;
 }
 .current {
-  font-size: 85px;
+  font-size: 90px;
   font-family: "Alice", serif;
-  padding-left: 40px;
-  color: #2f4858;
+  padding-left: 80px;
+  color: #8984ef;
+  margin: 0;
 }
 .tempUnit {
   position: relative;
   font-size: 18px;
-  top: -42px;
+  font-family: "Alice", serif;
+  font-weight: 400px;
+  top: -37px;
   left: 5px;
-  color: #2f4858;
+  color: #aca9bb;
 }
 div.col {
   padding: 0;
@@ -71,29 +76,30 @@ div.col {
 }
 div.row {
   display: inline-flex;
-  margin: 5px auto;
+  margin: 0 -6px;
   font-size: 15px;
   font-family: "Alice", serif;
   font-weight: bold;
-  color: #2f4858;
 }
 div.row.temp {
   position: relative;
-  left: 20px;
+  left: 10px;
+  color: #a7a0d6;
 }
 div.day {
   position: relative;
-  left: 30px;
+  left: 20px;
   top: -50px;
+  color: #837db0;
 }
 .form-row {
-  margin: 0 auto;
+  margin: 10px auto;
   font-family: "Amatic SC", cursive;
   width: 90%;
-  padding: 0;
+  padding-left: 10px;
 }
 #citySearch {
-  background-color: #fff8e8;
+  background-color: #faf8ff;
   font-family: "Amatic SC", cursive;
   font-size: 25px;
   height: 41px;
@@ -109,17 +115,18 @@ div.day {
   font-size: 25px;
   height: 41px;
   margin-top: 2px;
+  margin-left: 5px;
   padding: 1px 10px;
   border-radius: 10px;
   text-align: center;
 }
 #showCurrent {
-  background-color: #00d3ff;
+  background-color: #a7a0d6;
   display: block;
   font-family: "Amatic SC", cursive;
   height: 41px;
   margin-top: 2px;
-  margin-left: 4px;
+  margin-left: 8px;
   padding: 1px 10px;
   border-radius: 10px;
 }
