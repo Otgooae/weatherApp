@@ -1,5 +1,5 @@
-let currentTime = new Date();
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -28,9 +28,8 @@ function formatDate(date) {
   let currentDate = date.getDate();
   return `${day}, ${month} ${currentDate}`;
 }
-let now = document.querySelector("h2");
-now.innerHTML = formatDate(currentTime);
-function formatTime(time) {
+function formatTime(timestamp) {
+  let time = new Date(timestamp);
   let hours = time.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -41,23 +40,33 @@ function formatTime(time) {
   }
   return `${hours}:${minutes}`;
 }
-let nowTime = document.querySelector("h3");
-nowTime.innerHTML = formatTime(currentTime);
 function showCityTemp(response) {
   console.log(response.data);
   let temp = Math.round(response.data.main.temp);
   let cityName = response.data.name;
   let searchedCity = document.querySelector("h1");
-  searchedCity.innerHTML = `${cityName}`;
-  searchedCity.innerHTML = searchedCity.innerHTML.toUpperCase();
   let cityTemp = document.querySelector("#currentTemp");
-  cityTemp.innerHTML = `${temp}`;
+  let currentDate = document.querySelector("#date");
+  let currentTime = document.querySelector("#time");
+  let icon = document.querySelector("img#mainIcon");
+  let iconCode = response.data.weather[0].icon;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+  searchedCity.innerHTML = `${cityName}`;
+  searchedCity.innerHTML = searchedCity.innerHTML.toUpperCase();
+  cityTemp.innerHTML = `${temp}`;
+  currentDate.innerHTML = formatDate(response.data.dt * 1000);
+  currentTime.innerHTML = formatTime(response.data.dt * 1000);
+  icon.setAttribute("alt", response.data.weather[0].description);
+  if (iconCode.indexOf("n") > -1) {
+    icon.setAttribute("src", `images/nightImages/${iconCode}.svg`);
+  } else {
+    icon.setAttribute("src", `images/dayImages/${iconCode}.svg`);
+  }
 }
 function search(city) {
   let apiKey = `c518c03770222f903df8ad86b5e217d8`;
