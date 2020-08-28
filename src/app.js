@@ -42,6 +42,7 @@ function formatTime(timestamp) {
 }
 function showCityTemp(response) {
   console.log(response.data);
+  celsiusTemp = response.data.main.temp;
   let temp = Math.round(response.data.main.temp);
   let cityName = response.data.name;
   let searchedCity = document.querySelector("h1");
@@ -99,3 +100,25 @@ function showCurrentTemp(event) {
 }
 let currentButton = document.querySelector("#showCurrent");
 currentButton.addEventListener("click", showCurrentTemp);
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let currentTemp = document.querySelector("#currentTemp");
+  currentTemp.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
+}
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let currentTemp = document.querySelector("#currentTemp");
+  currentTemp.innerHTML = Math.round(celsiusTemp);
+}
+
+celsiusTemp = null;
+
+let fahrenheitLink = document.querySelector(".fahrenheitLink");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+let celsiusLink = document.querySelector("#celsiusLink");
+celsiusLink.addEventListener("click", showCelsiusTemp);

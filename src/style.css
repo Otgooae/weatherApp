@@ -76,7 +76,14 @@ img#mainIcon {
   font-weight: 400px;
   top: -37px;
   left: 5px;
-  color: #aca9bb;
+}
+a.active {
+  cursor: default;
+  color: #4d4d4d;
+}
+a.active:hover {
+  cursor: default;
+  text-decoration: none;
 }
 div.col {
   padding: 0;
