@@ -41,7 +41,6 @@ function formatTime(timestamp) {
   return `${hours}:${minutes}`;
 }
 function showCityTemp(response) {
-  console.log(response.data);
   celsiusTemp = response.data.main.temp;
   let temp = Math.round(response.data.main.temp);
   let cityName = response.data.name;
@@ -69,12 +68,47 @@ function showCityTemp(response) {
     icon.setAttribute("src", `images/dayImages/${iconCode}.svg`);
   }
 }
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecast = null;
+  forecastElement.innerHTML = null;
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastIconCode = forecast.weather[0].icon;
+    if (forecastIconCode.indexOf("n") > -1) {
+      forecastElement.innerHTML += `<div class="col-2">
+      <h3 class="day">${formatTime(forecast.dt * 1000)}</h3>
+      <img src="images/nightImages/${forecastIconCode}.svg"
+               alt="${forecast.weather[0].description}"
+                id="forecastIcon" 
+                />
+      <div class="temp"><strong>${Math.round(
+        forecast.main.temp_max
+      )}°C</strong> ${Math.round(forecast.main.temp_min)}°C</div>
+    </div>`;
+    } else {
+      forecastElement.innerHTML += `<div class="col-2">
+      <h3 class="day">${formatTime(forecast.dt * 1000)}</h3>
+      <img src="images/dayImages/${forecastIconCode}.svg"
+               alt="${forecast.weather[0].description}"
+                id="forecastIcon" 
+                />
+      <div class="temp"><strong>${Math.round(
+        forecast.main.temp_max
+      )}°C</strong> ${Math.round(forecast.main.temp_min)}°C </div>
+    </div>`;
+    }
+  }
+}
 function search(city) {
   let apiKey = `c518c03770222f903df8ad86b5e217d8`;
   let unit = `metric`;
   let apiEndpoint = `https://api.openweathermap.org/data/2.5/weather?`;
   let apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(showCityTemp);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 function handleSubmit(event) {
   event.preventDefault();

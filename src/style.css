@@ -41,7 +41,7 @@ img#mainIcon {
 }
 .weather-app-wrapper {
   margin: 20px auto;
-  max-width: 500px;
+  max-width: 600px;
 }
 .weather {
   background: #f2ecff;
@@ -89,30 +89,6 @@ div.col {
   padding: 0;
   margin: 0 auto;
 }
-div.row {
-  display: inline-flex;
-  margin: 0 -6px;
-  font-size: 15px;
-  font-family: "Alice", serif;
-  font-weight: bold;
-}
-div.row.temp {
-  position: relative;
-  left: 10px;
-  color: #a7a0d6;
-}
-div.day {
-  position: relative;
-  left: 20px;
-  top: -50px;
-  color: #837db0;
-}
-.form-row {
-  margin: 10px auto;
-  font-family: "Amatic SC", cursive;
-  width: 90%;
-  padding-left: 10px;
-}
 #citySearch {
   background-color: #faf8ff;
   font-family: "Amatic SC", cursive;
@@ -130,8 +106,7 @@ div.day {
   font-size: 25px;
   height: 41px;
   margin-top: 2px;
-  margin-left: 5px;
-  padding: 1px 10px;
+  padding: 1px 13px;
   border-radius: 10px;
   text-align: center;
 }
@@ -141,14 +116,48 @@ div.day {
   font-family: "Amatic SC", cursive;
   height: 41px;
   margin-top: 2px;
-  margin-left: 8px;
   padding: 1px 10px;
   border-radius: 10px;
+}
+.forecast {
+  max-width: 100%;
+  margin-bottom: 7px;
+}
+div.col-2 {
+  display: inline-block;
+  padding: 0;
+}
+
+h3.day,
+div.temp {
+  position: relative;
+  top: -20px;
+  font-size: 15px;
+  font-family: serif;
+  margin: 5px auto;
+  color: #474554;
+}
+.col-2 {
+  max-width: 15%;
+}
+div.form-row {
+  display: flex;
+  position: relative;
+  top: -10px;
+  left: 80px;
+  max-width: 80%;
+  text-align: center;
+}
+#forecastIcon {
+  max-height: 40px;
+  max-width: 50px;
+  position: relative;
+  top: -20px;
 }
 .gitLink {
   display: block;
   font-size: 15px;
   font-family: "Amatic SC", cursive;
-  padding: 3px;
+  padding: 5px;
   text-align: center;
 }
