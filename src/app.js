@@ -129,6 +129,8 @@ function showCurrentTemp(event) {
     let apiEndpoint = `https://api.openweathermap.org/data/2.5/weather?`;
     let apiUrl = `${apiEndpoint}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(showCityTemp);
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
+    axios.get(apiUrl).then(displayForecast);
   }
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
 }
